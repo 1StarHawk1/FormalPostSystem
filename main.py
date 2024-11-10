@@ -81,11 +81,6 @@ if match:
 else:
     line = ''
 
-for i in line:
-    if i not in A:
-        print('Строка не принадлежит алфавиту A')
-        exit(0)
-
 print('A:', A)
 print('X:', X)
 print('A1:', A1)
@@ -95,6 +90,10 @@ with open('output.txt', 'w', encoding='utf8') as f:
     with redirect_stdout(f):
         print(line)
         print('-' * 30)
+        for i in line:
+            if i not in A:
+                print('Строка не принадлежит алфавиту A')
+                exit(0)
         i = 0
 
         while i < len(R):
